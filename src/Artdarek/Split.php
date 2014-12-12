@@ -1,7 +1,10 @@
 <?php
+
+namespace Artdarek;
+
 /**
- * Version: 0.0.2 
- * Updated: 2014.12.11
+ * Version: 0.0.3
+ * Updated: 2014.12.12
  * Author: 	Dariusz Prząda (artdarek@gmail.com)
  */
 class Split {
