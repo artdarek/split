@@ -3,7 +3,7 @@
 namespace Artdarek;
 
 /**
- * Version: 0.0.3
+ * Version: 0.0.4
  * Updated: 2014.12.12
  * Author: 	Dariusz Prząda (artdarek@gmail.com)
  */
@@ -34,6 +34,18 @@ class Split {
 	 * @return self
 	 */
 	public function __construct( $attributes = array() )
+	{
+		$this->make($attributes);
+		return $this;
+	}
+	
+	/**
+	 * Make
+	 *
+	 * @param  array $attributes
+	 * @return self
+	 */
+	public function make( $attributes = array() )
 	{
 		if (array_key_exists('data', $attributes)) $this->setData($attributes['data']);
 		return $this;
@@ -159,9 +171,13 @@ class Split {
 	 *
 	 * @return void
 	 */
-	public function debug()
+	public function debug($switch = true)
 	{
-		if( isset( $_GET['debug'] ) ) {
+		if( $switch == true ) {
+
+			echo '<strong>Randomized value:</strong><br>';
+			var_dump($this->_randomized);
+			echo '<hr>';
 
 			echo '<strong>Data:</strong><br>';
 			var_dump($this->_data);
@@ -171,12 +187,7 @@ class Split {
 			var_dump($this->_split);
 			echo '<hr>';
 
-			echo '<strong>Randomized value:</strong><br>';
-			var_dump($this->_randomized);
-
-			exit;
 		}
 	}
-
 
 }
